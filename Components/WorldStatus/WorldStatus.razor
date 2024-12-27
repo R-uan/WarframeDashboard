@@ -1,0 +1,43 @@
+@inject IJSRuntime JS
+
+<div class="main">
+    <div id="cetus">
+        <div class="image">
+            <img src="https://static.wikia.nocookie.net/warframe/images/1/1e/Earth.png" alt="">
+        </div>
+        <div class="state">
+            @if (this.CetusStatus != null)
+            {
+                <span>@(this.CetusStatus.IsDay ? "Day" : "Night")</span>
+                <span>@this.ConvertTime(CetusStatus.Expiry).ToShortTimeString()</span>
+            }
+        </div>
+    </div>
+
+    <div id="venus">
+        <div class="image">
+            <img src="https://static.wikia.nocookie.net/warframe/images/d/dc/Venus.png" alt="">
+        </div>
+        <div class="state">
+            @if (this.VenusStatus != null)
+            {
+                <span>@(this.VenusStatus.IsWarm ? "Warm" : "Cold")</span>
+                <span>@this.ConvertTime(VenusStatus.Expiry).ToShortTimeString()</span>
+            }
+        </div>
+    </div>
+
+    <div id="deimos">
+        <div class="image">
+            <img src="https://static.wikia.nocookie.net/warframe/images/b/b9/Deimos.png" alt="">
+        </div>
+        <div class="state">
+            @if (this.DeimosStatus != null)
+            {
+                <span>@this.DeimosStatus.Active</span>
+                <span>@this.ConvertTime(DeimosStatus.Expiry).ToShortTimeString()</span>
+            }
+        </div>
+    </div>
+
+</div>
