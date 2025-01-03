@@ -1,0 +1,183 @@
+.void {
+    gap: 4px;
+    padding: 3px;
+    display: flex;
+    min-width: 478px;
+    border-radius: 6px;
+    max-height: 740px;
+    height: fit-content;
+    width: fit-content;
+    overflow: auto;
+    flex-direction: column;
+    border: 1px solid #2a2a3c;
+    background-color: #1d1d2a;
+
+    .filter {
+        & > form { 
+            gap: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            label {
+                
+                color: white;
+            }
+
+        }
+
+        .steelpath_cont {
+            gap: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+    #steelpath {
+        appearance: none;
+        background-color: #dfe1e4;
+        border-radius: 72px;
+        border-style: none;
+        flex-shrink: 0;
+        height: 20px;
+        margin: 0;
+        position: relative;
+        width: 30px;
+    }
+
+    #steelpath::before {
+        bottom: -6px;
+        content: "";
+        left: -6px;
+        position: absolute;
+        right: -6px;
+        top: -6px;
+    }
+
+    #steelpath,
+    #steelpath::after {
+        transition: all 100ms ease-out;
+    }
+
+    #steelpath::after {
+        background-color: #fff;
+        border-radius: 50%;
+        content: "";
+        height: 14px;
+        left: 3px;
+        position: absolute;
+        top: 3px;
+        width: 14px;
+    }
+
+    #steelpath input[type=checkbox] {
+        cursor: default;
+    }
+
+    #steelpath:hover {
+        background-color: #c9cbcd;
+        transition-duration: 0s;
+    }
+
+    #steelpath:checked {
+        background-color: #6e79d6;
+    }
+
+    #steelpath:checked::after {
+        background-color: #fff;
+        left: 13px;
+    }
+
+    #steelpath :focus:not(.focus-visible) {
+        outline: 0;
+    }
+
+    #steelpath:checked:hover {
+        background-color: #535db3;
+    }
+
+        
+        select, option {
+            padding: 6px;
+            line-height: 0;
+            color: white;
+            border-radius: 3px;
+            border: 1px solid #2a2a3c;
+            background-color: transparent;
+        }
+    }
+
+    .fissure {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        border-radius: 4px;
+        padding: 3px 5px 3px 5px;
+        flex-direction: row;
+        border: 1px solid #2a2a3c;
+        background-color: #1d1d2a;
+        
+      .image {
+            aspect-ratio: 1/1;
+            height: 100%;
+
+            & > img {
+                object-fit: scale-down;
+                width: 100%;
+                height: 100%;
+            }
+        }
+      
+        .info {
+            display: flex;
+            color: white;
+            line-height: 1;
+            flex: 1 1 0%;
+            flex-direction: row;
+            align-items: center;
+            padding: 5px 10px 5px 10px;
+            justify-content: space-between;
+
+            & > div {
+                min-width: 100px;
+            }
+
+            & > div:first-child {
+                gap: 1.25px;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                font-size: 1rem;
+            }
+
+            & > div:nth-child(2) {
+                gap: 1.25px;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 1rem;
+                
+            }
+
+            & > div:last-child {
+                display: flex;
+                font-size: 1rem;
+                height: fit-content;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                .steelpath, .railjack {
+                    width: fit-content;
+                    aspect-ratio: 1/1;
+                    height: 35px;
+
+                    & > img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: scale-down;
+                    }
+                }
+            }
+        }
+    }
+}

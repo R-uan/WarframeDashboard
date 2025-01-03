@@ -1,0 +1,65 @@
+@inject TimezoneService TimezoneService
+
+<div class="void">
+    <div class="filter">
+        <form action="">
+            <select name="" id="" @onchange="TierSelectionChange">
+                <option value="none">All</option>
+                <option value="lith">Lith</option>
+                <option value="meso">Meso</option>
+                <option value="neo">Neo</option>
+                <option value="axi">Axi</option>
+                <option value="requiem">Requiem</option>
+            </select>
+
+            <div class="steelpath_cont">
+                <input @onchange="SteelPathSelectionChange" type="checkbox" name="steelpath" id="steelpath">
+                <label for="steelpath">Steel Path</label>
+            </div>
+        </form>
+    </div>
+    <div class="fissures">
+        @if (this.FissureFiltered != null)
+        {
+            @foreach (var fissure in this.FissureFiltered)
+            {
+                <div class="fissure">
+                    <div class="image">
+                        <img src=@(this.FissureImages[fissure.Tier]) alt="" srcset="">
+                    </div>
+                    <div class="info">
+                        <div>
+                            <span>@fissure.Tier</span>
+                            <span>@fissure.MissionType</span>
+                        </div>
+                        <div>
+                            <span>@fissure.Enemy</span>
+                            <span>Expire: @ConvertTimezone.Convert(fissure.Expiry,
+                               this.TimezoneService.Timezone).ToShortTimeString()</span>
+                        </div>
+                        <div>
+                            @if (fissure.IsSteelPath == true)
+                            {
+                                <div class="steelpath">
+                                    <img src="https://static.wikia.nocookie.net/warframe/images/1/10/SteelEssence.png/" alt=""
+                                        srcset="">
+                                </div>
+                            }
+                            @if (fissure.IsStorm == true)
+                            {
+                                <div class="railjack">
+                                    <img src="https://static.wikia.nocookie.net/warframe/images/e/e0/RailjackMarket.png/" alt=""
+                                        srcset="">
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+}

@@ -1,6 +1,7 @@
 @inject IJSRuntime JS
+@inject TimezoneService TimezoneService
 
-<div class="main">
+<div class="world_status">
     <div id="cetus">
         <div class="image">
             <img src="https://static.wikia.nocookie.net/warframe/images/1/1e/Earth.png" alt="">
@@ -9,7 +10,7 @@
             @if (this.CetusStatus != null)
             {
                 <span>@(this.CetusStatus.IsDay ? "Day" : "Night")</span>
-                <span>@this.ConvertTime(CetusStatus.Expiry).ToShortTimeString()</span>
+                <span>@ConvertTimezone.Convert(CetusStatus.Expiry, this.TimezoneService.Timezone).ToShortTimeString()</span>
             }
         </div>
     </div>
@@ -22,7 +23,7 @@
             @if (this.VenusStatus != null)
             {
                 <span>@(this.VenusStatus.IsWarm ? "Warm" : "Cold")</span>
-                <span>@this.ConvertTime(VenusStatus.Expiry).ToShortTimeString()</span>
+                <span>@ConvertTimezone.Convert(VenusStatus.Expiry, this.TimezoneService.Timezone).ToShortTimeString()</span>
             }
         </div>
     </div>
@@ -34,8 +35,9 @@
         <div class="state">
             @if (this.DeimosStatus != null)
             {
-                <span>@this.DeimosStatus.Active</span>
-                <span>@this.ConvertTime(DeimosStatus.Expiry).ToShortTimeString()</span>
+                <span>@(this.DeimosStatus.IsVome ? "Vome" : "Fass")</span>
+                <span>@ConvertTimezone.Convert(DeimosStatus.Expiry,
+                           this.TimezoneService.Timezone).ToShortTimeString()</span>
             }
         </div>
     </div>

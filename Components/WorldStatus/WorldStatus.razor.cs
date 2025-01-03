@@ -7,41 +7,29 @@ namespace WarframeDashboard.Components.WorldStatus
 {
     public partial class WorldStatus : ComponentBase
     {
-        public string? TimeZone { get; set; }
         public CetusStatus? CetusStatus { get; set; }
         public OrbVallisStatus? VenusStatus { get; set; }
         public CambionDriftStatus? DeimosStatus { get; set; }
 
         public async Task GetCetusStatus()
         {
-            var cetusStatus = await WAPI.GetCetusStatus();
+            var cetusStatus = await WarframeApi.GetCetusStatus();
             if (cetusStatus != null) this.CetusStatus = cetusStatus;
             else this.CetusStatus = null;
         }
 
         public async Task GetVenusStatus()
         {
-            var venusStatus = await WAPI.GetVallisStatus();
+            var venusStatus = await WarframeApi.GetVallisStatus();
             if (venusStatus != null) this.VenusStatus = venusStatus;
             else this.VenusStatus = null;
         }
 
         public async Task GetDeimosStatus()
         {
-            var deimosStatus = await WAPI.GetDeimosStatus();
+            var deimosStatus = await WarframeApi.GetDeimosStatus();
             if (deimosStatus != null) this.DeimosStatus = deimosStatus;
             else this.DeimosStatus = deimosStatus;
-        }
-
-        private DateTime ConvertTime(DateTime zuluTime)
-        {
-            if (!string.IsNullOrEmpty(TimeZone))
-            {
-                TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(TimeZone);
-                return TimeZoneInfo.ConvertTimeFromUtc(zuluTime, timeZoneInfo);
-            }
-
-            return zuluTime;
         }
 
         protected override async Task OnInitializedAsync()
@@ -55,7 +43,7 @@ namespace WarframeDashboard.Components.WorldStatus
         {
             if (firstRender)
             {
-                this.TimeZone = await JS.InvokeAsync<string>("getTimeZone");
+                this.TimezoneService.SetTimezone(await JS.InvokeAsync<string>("getTimeZone"));
                 StateHasChanged();
             }
         }
