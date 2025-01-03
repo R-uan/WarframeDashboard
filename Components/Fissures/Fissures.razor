@@ -9,12 +9,27 @@
                 <option value="meso">Meso</option>
                 <option value="neo">Neo</option>
                 <option value="axi">Axi</option>
+                <option value="omnia">Omnia</option>
                 <option value="requiem">Requiem</option>
             </select>
 
-            <div class="steelpath_cont">
-                <input @onchange="SteelPathSelectionChange" type="checkbox" name="steelpath" id="steelpath">
-                <label for="steelpath">Steel Path</label>
+            <div class="filter_checkboxes">
+                <div class="steelpath_cont">
+                    <label for="steelpath">
+                        <img src="https://static.wikia.nocookie.net/warframe/images/1/10/SteelEssence.png/" alt=""
+                            srcset="">
+                    </label>
+                    <input checked="@this.FissuresFilter.SteelPathFilter" @onchange="SteelPathSelectionChange"
+                        type="checkbox" name="steelpath" id="steelpath">
+                </div>
+                <div class="railjack_cont">
+                    <label for="railjack">
+                        <img src="https://static.wikia.nocookie.net/warframe/images/e/e0/RailjackMarket.png/" alt=""
+                            srcset="">
+                    </label>
+                    <input checked="@this.FissuresFilter.RailjackFilter" @onchange="RaijackSelectionChange"
+                        type="checkbox" name="railjack" id="railjack">
+                </div>
             </div>
         </form>
     </div>

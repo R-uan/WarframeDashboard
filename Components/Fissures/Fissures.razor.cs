@@ -7,7 +7,7 @@ namespace WarframeDashboard.Components.Fissures
     public partial class Fissures : ComponentBase
     {
         public delegate void FilterEvent();
-        public event FilterEvent FilterEventHandlers;
+        public event FilterEvent? FilterEventHandlers;
         public List<Fissure>? FissureList { get; set; }
         public List<Fissure>? FissureFiltered { get; set; }
         private FissuresFilter FissuresFilter { get; } = new FissuresFilter();
@@ -29,6 +29,8 @@ namespace WarframeDashboard.Components.Fissures
                 placeholder = placeholder.Where(fissure => fissure.Tier == this.FissuresFilter.FissureTier).ToList();
             if (this.FissuresFilter.SteelPathFilter == true && placeholder != null)
                 placeholder = placeholder.Where(fissure => fissure.IsSteelPath == true).ToList();
+            if (this.FissuresFilter.RailjackFilter == true && placeholder != null)
+                placeholder = placeholder.Where(fissure => fissure.IsStorm == true).ToList();
             this.FissureFiltered = placeholder;
             StateHasChanged();
         }
@@ -54,9 +56,25 @@ namespace WarframeDashboard.Components.Fissures
         {
             var selectedValue = e.Value;
             if ((bool)selectedValue! == true)
+            {
                 this.FissuresFilter.SteelPathFilter = true;
+                this.FissuresFilter.RailjackFilter = false;
+            }
             else
                 this.FissuresFilter.SteelPathFilter = false;
+            this.FilterEventHandlers?.Invoke();
+        }
+
+        private void RaijackSelectionChange(ChangeEventArgs e)
+        {
+            var selectedValue = e.Value;
+            if ((bool)selectedValue! == true)
+            {
+                this.FissuresFilter.RailjackFilter = true;
+                this.FissuresFilter.SteelPathFilter = false;
+            }
+            else
+                this.FissuresFilter.RailjackFilter = false;
             this.FilterEventHandlers?.Invoke();
         }
 
@@ -83,7 +101,8 @@ namespace WarframeDashboard.Components.Fissures
 
     public class FissuresFilter
     {
-        public bool SteelPathFilter { get; set; } = false;
         public FissureTier? FissureTier { get; set; }
+        public bool RailjackFilter { get; set; } = false;
+        public bool SteelPathFilter { get; set; } = false;
     }
 }

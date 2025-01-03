@@ -13,26 +13,44 @@
     background-color: #1d1d2a;
 
     .filter {
+
+        .filter_checkboxes {
+            gap: 7px;
+            display: flex;
+            flex-direction: row;
+        }
+
         & > form { 
             gap: 20px;
             display: flex;
             flex-direction: row;
             align-items: center;
-
+            justify-content: space-between;
+            
             label {
-                
                 color: white;
+                aspect-ratio: 1/1;
+                height: 30px;
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                }
             }
-
         }
 
-        .steelpath_cont {
-            gap: 5px;
+        .steelpath_cont, .railjack_cont {
+            gap: 3px;
             display: flex;
+            border-radius: 6px;
+            align-items: center;
             justify-content: center;
+            padding: 3px 6px 3px 6px;
+            border: 1px solid #2a2a3c;
+
         }
 
-    #steelpath {
+    #steelpath, #railjack {
         appearance: none;
         background-color: #dfe1e4;
         border-radius: 72px;
@@ -44,7 +62,7 @@
         width: 30px;
     }
 
-    #steelpath::before {
+    #steelpath::before, #railjack::before {
         bottom: -6px;
         content: "";
         left: -6px;
@@ -54,11 +72,11 @@
     }
 
     #steelpath,
-    #steelpath::after {
+    #steelpath::after, #railjack, #railjack::after {
         transition: all 100ms ease-out;
     }
 
-    #steelpath::after {
+    #steelpath::after, #railjack::after {
         background-color: #fff;
         border-radius: 50%;
         content: "";
@@ -69,29 +87,29 @@
         width: 14px;
     }
 
-    #steelpath input[type=checkbox] {
+    #steelpath input[type=checkbox], #railjack input[type=checkbox] {
         cursor: default;
     }
 
-    #steelpath:hover {
+    #steelpath:hover, #railjack:hover {
         background-color: #c9cbcd;
         transition-duration: 0s;
     }
 
-    #steelpath:checked {
+    #steelpath:checked, #railjack:checked {
         background-color: #6e79d6;
     }
 
-    #steelpath:checked::after {
+    #steelpath:checked::after, #railjack:checked::after {
         background-color: #fff;
         left: 13px;
     }
 
-    #steelpath :focus:not(.focus-visible) {
+    #steelpath :focus:not(.focus-visible), #railjack :focus:not(.focus-visible) {
         outline: 0;
     }
 
-    #steelpath:checked:hover {
+    #steelpath:checked:hover, #railjack:checked:hover {
         background-color: #535db3;
     }
 
