@@ -11,6 +11,6 @@ main {
     gap: 10px;
     display: flex;
     padding: 10px;
-    flex-direction: column;
+    flex-direction: row;
 }
 

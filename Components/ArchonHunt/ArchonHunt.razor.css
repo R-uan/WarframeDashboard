@@ -1,0 +1,108 @@
+.archon_hunt {
+    gap: 5px;
+    display: flex;
+    width: 500px;
+    padding: 3px;
+    height: fit-content;
+    border-radius: 6px;
+    flex-direction: column;
+    border: 1px solid #2a2a3c;
+    background-color: #1d1d2a;
+
+    .archon {
+        gap: 5px;
+        width: 100%;
+        display: flex;
+        height: 100px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+        & > div:first-child, & > div:last-child {
+            height: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 3px;
+            border: 1px solid #2a2a3c;
+
+            & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+            }
+        }
+
+        & > div:nth-child(2) {
+            flex: 1;
+            border-radius: 3px;
+            height: 100%;
+            display: flex;
+            color: white;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid #2a2a3c;
+
+            & > span:first-child {
+                font-size: 1.3rem;
+                line-height: 1;
+            }
+
+            & > span:nth-child(2) {
+                font-size: 1.2rem;
+                line-height: 1.2;
+            }
+
+            & > span:last-child {
+                font-size: 1.1rem;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    .missions {
+        gap: 4px;
+        display: flex;
+        flex-direction: column;
+
+        & > div {
+            height: 80px;
+            display: flex;
+            padding: 2px 6px;
+            border-radius: 3px;
+            flex-direction: row;
+            outline: 1px solid #2a2a3c;
+            justify-content: space-between;
+
+            & > div:first-child, & > div:last-child {
+                height: 100%;
+                padding: 6px;
+                aspect-ratio: 1/1;
+
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: scale-down;
+                }
+            }
+
+            & > div:nth-child(2) {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
+                color: white;
+
+                &>span:first-child {
+                    font-size: 1.35rem;
+                    line-height: 1;
+                }
+
+                &>span:last-child{
+                    font-size: 1rem;
+                    line-height: 1;                    
+                }
+            }
+        }
+    }
+}

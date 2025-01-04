@@ -1,0 +1,38 @@
+@inject TimezoneService TimezoneService
+
+<div class="archon_hunt">
+    @if (this.Arch != null)
+    {
+        <div class="archon">
+            <div>
+                <img src=@this.ArchonImages[this.Arch.Boss].Boss alt="archon boss">
+            </div>
+            <div>
+                <span>Archon Hunt</span>
+                <span>@this.Arch.Boss</span>
+                <span>@ConvertTimezone.Convert(this.Arch.Expiry, TimezoneService.Timezone).ToLongDateString()
+                </span>
+            </div>
+            <div>
+                <img src=@this.ArchonImages[this.Arch.Boss].Shard alt="archon shard">
+            </div>
+        </div>
+        <div class="missions">
+        @foreach (var mission in this.Arch.Missions)
+            {
+                <div>
+                    <div>
+                        <img src="https://static.wikia.nocookie.net/warframe/images/c/c6/IconNarmer.png" alt="narmer icon">
+                    </div>
+                    <div class="info">
+                        <span>@mission.Type</span>
+                        <span>@mission.Node</span>
+                    </div>
+                    <div>
+                        <img src="https://static.wikia.nocookie.net/warframe/images/c/c6/IconNarmer.png" alt="narmer icon">
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
