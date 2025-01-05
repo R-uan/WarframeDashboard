@@ -1,0 +1,33 @@
+<div class="invasions">
+    @if (this.InvasionList != null)
+    {
+        @foreach (var invasion in this.InvasionList)
+        {
+            <div class="invasion">
+                <div class="attacker">
+                    <div class="image">
+                        <img src=@this.FactionIcons[invasion.Attacker.Faction] alt="attacker">
+                    </div>
+                    <div class="info">
+                        <span>Attacker</span>
+                        <span>@invasion.Attacker.Faction</span>
+                        <span class="reward">@invasion.Attacker.Reward?.ItemString</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://static.wikia.nocookie.net/warframe/images/e/e6/Site-logo.png" alt="" srcset="">
+                </div>
+                <div class="defender">
+                    <div class="image">
+                        <img src=@this.FactionIcons[invasion.Defender.Faction] alt="attacker">
+                    </div>
+                    <div class="info">
+                        <span>Defender</span>
+                        <span>@invasion.Defender.Faction</span>
+                        <span class="reward">@invasion.Defender.Reward?.ItemString</span>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

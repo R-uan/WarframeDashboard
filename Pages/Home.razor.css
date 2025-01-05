@@ -1,5 +1,5 @@
-.cont_1 {
-    gap: 15px;
+.cont_1, .cont_2 {
+    gap: 7px;
     display: flex;
     flex-direction: column;
 }
