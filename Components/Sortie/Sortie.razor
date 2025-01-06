@@ -1,0 +1,28 @@
+@inject TimezoneService TimezoneService
+
+<div class="sortie">
+    @if (this.Sortied != null)
+    {
+        <div class="info">
+            <span>Sortie</span>
+            <span> @this.Sortied.Boss</span>
+            <span>@ConvertTimezone.Convert(this.Sortied.Expiry, this.TimezoneService.Timezone).ToShortDateString()</span>
+        </div>
+        <div class="missions">
+        <span>Missions</span>
+        @foreach (var mission in this.Sortied.Missions)
+            {
+                <div>
+                    <div>
+                        <span>@mission.MissionType</span>
+                        <span>@mission.Node</span>
+                    </div>
+                    <div>
+                        <span>@mission.Modifier</span>
+                        <span>@mission.ModifierDescription</span>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+.sortie {
+    gap: 3px;
+    padding: 3px;
+    width: 500px;
+    display: flex;
+    height: fit-content;
+    border-radius: 6px;
+    flex-direction: column;
+    background-color: #1d1d2a;
+    border: 1px solid #2a2a3c;
+
+    & > .info {
+        width: 100%;
+        display: flex;
+        border-radius: 2.5px;
+        flex-direction: row;
+        padding: 3px 7px 3px 7px;
+        border: 1px solid #2a2a3c;
+        justify-content: space-between;
+
+        span{
+            color: white;
+            font-size: 1.1rem;
+        }
+    }
+
+    & > .missions {
+        gap: 3px;
+        width: 100%;
+        display: flex;
+        height: fit-content;
+        flex-direction: column;
+
+        & > div {
+            gap: 7px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            color: white;
+            padding: 5px;
+            height: fit-content;
+            border-radius: 2.5px;
+            border: 1px solid #2a2a3c;
+            & > div:first-child {
+                
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

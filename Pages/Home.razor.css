@@ -1,4 +1,4 @@
-.cont_1, .cont_2 {
+section {
     gap: 7px;
     display: flex;
     flex-direction: column;
