@@ -161,10 +161,18 @@
 
             & > div:first-child {
                 gap: 1.25px;
-                height: fit-content;
                 display: flex;
+                height: fit-content;
                 flex-direction: column;
-                font-size: 1rem;
+
+                & > span:first-child {
+                    font-family: "Bebas Neue", serif;
+                    font-size: 1.2rem;
+                }
+
+                & > span:last-child {
+                    font-size: 1rem;
+                }
             }
 
             & > div:nth-child(2) {

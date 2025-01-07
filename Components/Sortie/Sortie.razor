@@ -9,7 +9,6 @@
             <span>@ConvertTimezone.Convert(this.Sortied.Expiry, this.TimezoneService.Timezone).ToShortDateString()</span>
         </div>
         <div class="missions">
-        <span>Missions</span>
         @foreach (var mission in this.Sortied.Missions)
             {
                 <div>

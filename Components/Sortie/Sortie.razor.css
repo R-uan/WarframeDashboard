@@ -17,10 +17,11 @@
         padding: 3px 7px 3px 7px;
         border: 1px solid #2a2a3c;
         justify-content: space-between;
+        font-family: "Bebas Neue", serif;
 
         span{
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -32,19 +33,25 @@
         flex-direction: column;
 
         & > div {
-            gap: 7px;
-            display: flex;
-            flex-direction: column;
+            gap: 3px;
             width: 100%;
+            display: flex;
             color: white;
-            padding: 5px;
+            padding: 7px 5px;
             height: fit-content;
             border-radius: 2.5px;
+            flex-direction: column;
             border: 1px solid #2a2a3c;
-            & > div:first-child {
-                
+
+            & > div:first-child {    
                 display: flex;
                 justify-content: space-between;
+
+                & > span:first-child {
+                    font-family: "Bebas Neue", serif;
+                    font-size: 1.35rem;                    
+                    line-height: 1;
+                }
             }
         }
     }

@@ -42,18 +42,21 @@
             justify-content: center;
             border: 1px solid #2a2a3c;
 
+            
             & > span:first-child {
-                font-size: 1.3rem;
-                line-height: 1;
-            }
-
-            & > span:nth-child(2) {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
                 line-height: 1.2;
+                font-family: "Bebas Neue", serif;
+            }
+            
+            & > span:nth-child(2) {
+                line-height: 1;
+                font-size: 2rem;
+                font-family: "Bebas Neue", serif;
             }
 
             & > span:last-child {
-                font-size: 1.1rem;
+                font-size: 1rem;
                 line-height: 1.2;
             }
         }
@@ -75,7 +78,7 @@
 
             & > div:first-child, & > div:last-child {
                 height: 100%;
-                padding: 6px;
+                padding: 10px;
                 aspect-ratio: 1/1;
 
                 & > img {
@@ -94,13 +97,14 @@
                 color: white;
 
                 &>span:first-child {
-                    font-size: 1.35rem;
-                    line-height: 1;
+                    line-height: 1.1;                
+                    font-size: 1.55rem;
+                    font-family: "Bebas Neue", serif;
                 }
 
                 &>span:last-child{
-                    font-size: 1rem;
-                    line-height: 1;                    
+                    font-size: 1.2rem;
+                    line-height: 1.1;                    
                 }
             }
         }
