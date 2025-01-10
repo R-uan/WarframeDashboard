@@ -2,9 +2,9 @@
     gap: 4px;
     padding: 3px;
     display: flex;
-    min-width: 478px;
+    min-width: 500px;
     border-radius: 6px;
-    max-height: 790px;
+    max-height: 485px;
     height: fit-content;
     width: fit-content;
     overflow: auto;
@@ -50,70 +50,69 @@
 
         }
 
-    #steelpath, #railjack {
-        appearance: none;
-        background-color: #dfe1e4;
-        border-radius: 72px;
-        border-style: none;
-        flex-shrink: 0;
-        height: 20px;
-        margin: 0;
-        position: relative;
-        width: 30px;
-    }
+        #steelpath, #railjack {
+            appearance: none;
+            background-color: #dfe1e4;
+            border-radius: 72px;
+            border-style: none;
+            flex-shrink: 0;
+            height: 20px;
+            margin: 0;
+            position: relative;
+            width: 30px;
+        }
 
-    #steelpath::before, #railjack::before {
-        bottom: -6px;
-        content: "";
-        left: -6px;
-        position: absolute;
-        right: -6px;
-        top: -6px;
-    }
+        #steelpath::before, #railjack::before {
+            bottom: -6px;
+            content: "";
+            left: -6px;
+            position: absolute;
+            right: -6px;
+            top: -6px;
+        }
 
-    #steelpath,
-    #steelpath::after, #railjack, #railjack::after {
-        transition: all 100ms ease-out;
-    }
+        #steelpath,
+        #steelpath::after, #railjack, #railjack::after {
+            transition: all 100ms ease-out;
+        }
 
-    #steelpath::after, #railjack::after {
-        background-color: #fff;
-        border-radius: 50%;
-        content: "";
-        height: 14px;
-        left: 3px;
-        position: absolute;
-        top: 3px;
-        width: 14px;
-    }
+        #steelpath::after, #railjack::after {
+            background-color: #fff;
+            border-radius: 50%;
+            content: "";
+            height: 14px;
+            left: 3px;
+            position: absolute;
+            top: 3px;
+            width: 14px;
+        }
 
-    #steelpath input[type=checkbox], #railjack input[type=checkbox] {
-        cursor: default;
-    }
+        #steelpath input[type=checkbox], #railjack input[type=checkbox] {
+            cursor: default;
+        }
 
-    #steelpath:hover, #railjack:hover {
-        background-color: #c9cbcd;
-        transition-duration: 0s;
-    }
+        #steelpath:hover, #railjack:hover {
+            background-color: #c9cbcd;
+            transition-duration: 0s;
+        }
 
-    #steelpath:checked, #railjack:checked {
-        background-color: #6e79d6;
-    }
+        #steelpath:checked, #railjack:checked {
+            background-color: #6e79d6;
+        }
 
-    #steelpath:checked::after, #railjack:checked::after {
-        background-color: #fff;
-        left: 13px;
-    }
+        #steelpath:checked::after, #railjack:checked::after {
+            background-color: #fff;
+            left: 13px;
+        }
 
-    #steelpath :focus:not(.focus-visible), #railjack :focus:not(.focus-visible) {
-        outline: 0;
-    }
+        #steelpath :focus:not(.focus-visible), #railjack :focus:not(.focus-visible) {
+            outline: 0;
+        }
 
-    #steelpath:checked:hover, #railjack:checked:hover {
-        background-color: #535db3;
-    }
+        #steelpath:checked:hover, #railjack:checked:hover {
+            background-color: #535db3;
+        }
 
-        
         select, option {
             padding: 6px;
             line-height: 0;
@@ -124,83 +123,89 @@
         }
     }
 
-    .fissure {
-        width: 100%;
-        height: 70px;
+    .fissures {
+        gap: 3px;
         display: flex;
-        border-radius: 4px;
-        padding: 3px 5px 3px 5px;
-        flex-direction: row;
-        border: 1px solid #2a2a3c;
-        background-color: #1d1d2a;
+        flex-direction: column;
         
-      .image {
-            aspect-ratio: 1/1;
-            height: 100%;
-
-            & > img {
-                object-fit: scale-down;
-                width: 100%;
-                height: 100%;
-            }
-        }
-      
-        .info {
+        .fissure {
+            width: 100%;
+            height: 70px;
             display: flex;
-            color: white;
-            line-height: 1;
-            flex: 1 1 0%;
+            border-radius: 4px;
+            padding: 3px 5px 3px 5px;
             flex-direction: row;
-            align-items: center;
-            padding: 5px 10px 5px 10px;
-            justify-content: space-between;
-
-            & > div {
-                min-width: 100px;
-            }
-
-            & > div:first-child {
-                gap: 1.25px;
-                display: flex;
-                height: fit-content;
-                flex-direction: column;
-
-                & > span:first-child {
-                    font-family: "Bebas Neue", serif;
-                    font-size: 1.2rem;
-                }
-
-                & > span:last-child {
-                    font-size: 1rem;
+            border: 1px solid #2a2a3c;
+            background-color: #1d1d2a;
+            
+          .image {
+                aspect-ratio: 1/1;
+                height: 100%;
+    
+                & > img {
+                    object-fit: scale-down;
+                    width: 100%;
+                    height: 100%;
                 }
             }
-
-            & > div:nth-child(2) {
-                gap: 1.25px;
-                height: fit-content;
+          
+            .info {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                font-size: 1rem;
-                
-            }
-
-            & > div:last-child {
-                display: flex;
-                font-size: 1rem;
-                height: fit-content;
+                color: white;
+                line-height: 1;
+                flex: 1 1 0%;
                 flex-direction: row;
-                justify-content: flex-end;
-
-                .steelpath, .railjack {
-                    width: fit-content;
-                    aspect-ratio: 1/1;
-                    height: 35px;
-
-                    & > img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: scale-down;
+                align-items: center;
+                padding: 5px 10px 5px 10px;
+                justify-content: space-between;
+    
+                & > div {
+                    min-width: 100px;
+                }
+    
+                & > div:first-child {
+                    gap: 1.25px;
+                    display: flex;
+                    height: fit-content;
+                    flex-direction: column;
+    
+                    & > span:first-child {
+                        font-family: "Bebas Neue", serif;
+                        font-size: 1.2rem;
+                    }
+    
+                    & > span:last-child {
+                        font-size: 1rem;
+                    }
+                }
+    
+                & > div:nth-child(2) {
+                    gap: 1.25px;
+                    height: fit-content;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-size: 1rem;
+                    
+                }
+    
+                & > div:last-child {
+                    display: flex;
+                    font-size: 1rem;
+                    height: fit-content;
+                    flex-direction: row;
+                    justify-content: flex-end;
+    
+                    .steelpath, .railjack {
+                        width: fit-content;
+                        aspect-ratio: 1/1;
+                        height: 35px;
+    
+                        & > img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: scale-down;
+                        }
                     }
                 }
             }
