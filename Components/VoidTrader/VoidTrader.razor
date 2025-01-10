@@ -1,0 +1,27 @@
+@inject TimezoneService TimezoneService
+
+<div class="trader">
+    @if (this.BaroKitten != null)
+    {
+        <div class="baro">
+            <div>
+                <img src="https://static.wikia.nocookie.net/warframe/images/a/a7/TennoCon2020BaroCropped.png" alt="">
+            </div>
+            @if (this.BaroKitten.Active == false)
+            {
+                <div class="info">
+                    <span>When baro ?</span>
+                    <span>@ConvertTimezone.Convert(this.BaroKitten.Activation,
+                               TimezoneService.Timezone).ToLongDateString()</span>
+                </div>
+            }
+            else
+            {
+                <div class="info">
+                    <span>Baro Leaving on</span>
+                    <span>@ConvertTimezone.Convert(this.BaroKitten.Expiry, TimezoneService.Timezone).ToLongDateString()</span>
+                </div>
+            }
+        </div>
+    }
+</div>

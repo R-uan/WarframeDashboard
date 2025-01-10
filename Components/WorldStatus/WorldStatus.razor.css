@@ -5,8 +5,8 @@
     width: fit-content;
     border-radius: 6px;
     flex-direction: row;
-    border: 1px solid #2a2a3c;
     padding: 7px 3px 7px 3px;
+    border: 1px solid #2a2a3c;
     background-color: #1d1d2a;
 
     /* #cetus #venus #deimos */
