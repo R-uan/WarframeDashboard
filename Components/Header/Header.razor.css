@@ -1,0 +1,50 @@
+header {
+    width: 95%;
+    display: flex;
+    padding: 10px;
+    border-radius: 6px;
+    height: fit-content;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #2a2a3c;    
+    justify-content: space-around;
+
+    .logo {
+        width: 70px;
+        height: 70px;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .misc {
+        padding: 2px;
+        height: fit-content;
+        width: fit-content;
+
+        .nightwave {
+            gap: 10px;
+
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            .img {
+                width: 60px;
+                height: 60px;
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .text {
+                height: fit-content;
+                color: white;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

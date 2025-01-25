@@ -1,5 +1,8 @@
 section {
     gap: 7px;
+    width: 33%;
+    height: 100%;
     display: flex;
+    max-height: 100%;
     flex-direction: column;
 }

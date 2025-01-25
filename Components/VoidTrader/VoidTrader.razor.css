@@ -1,14 +1,15 @@
 .trader {
-    width: 500px;
-    height: fit-content;
-    padding: 3px;
+    display: flex;
+    flex: 1 1 0%;
+    padding: 0px 20px 0px 20px;
+    align-items: center;
     border: 1px solid #2a2a3c;
-    background-color: #1d1d2a;
+    /* background-color: #1d1d2a; */
     border-radius: 6px;
 
     .baro {
+        height: 100px;
         width: 100%;
-        height: 130px;
         display: flex;
         flex-direction: row;
 
@@ -21,11 +22,12 @@
                 height: 100%;
                 border-radius: 3px;
                 object-fit: scale-down;
-                border: 1px solid #2a2a3c;
+                /* border: 1px solid #2a2a3c; */
             }
          }
 
         & > .info {
+
             width: 100%;
             display: flex;
             align-items: center;

@@ -1,18 +1,22 @@
 .page {
+    gap: 5px;
     height: 100vh;
+    padding: 10px;
     display: flex;
+    overflow: hidden;
     max-height: 100vh;
     position: relative;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     background-color: #1a1c23;
 }
 
 main {
-    flex: 1;
     gap: 7px;;
+    width: 95%;
+    height: 87vh;
     display: flex;
-    padding: 10px;
-    max-height: 100%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 }

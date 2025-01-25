@@ -1,13 +1,13 @@
 .archon_hunt {
     gap: 5px;
     display: flex;
-    width: 500px;
+    width: 100%;
     padding: 3px;
     height: fit-content;
     border-radius: 6px;
     flex-direction: column;
     border: 1px solid #2a2a3c;
-    background-color: #1d1d2a;
+    /* background-color: #1d1d2a; */
 
     .archon {
         gap: 5px;

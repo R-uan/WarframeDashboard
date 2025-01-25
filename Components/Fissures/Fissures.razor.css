@@ -1,19 +1,20 @@
 .void {
     gap: 4px;
-    padding: 3px;
     display: flex;
-    min-width: 500px;
-    border-radius: 6px;
-    max-height: 485px;
-    height: fit-content;
-    width: fit-content;
     overflow: auto;
+    min-width: 100%;
+    border-radius: 6px;
     flex-direction: column;
     border: 1px solid #2a2a3c;
-    background-color: #1d1d2a;
+    box-sizing: border-box;
+    /* background-color: #1d1d2a; */
 
     .filter {
-
+        padding: 3px;
+        /* border: 1px solid #2a2a3c; */
+        background-color:#1a1c23;
+        position: sticky;
+        top: 0;
         .filter_checkboxes {
             gap: 7px;
             display: flex;
@@ -124,6 +125,7 @@
     }
 
     .fissures {
+        padding: 3px;
         gap: 3px;
         display: flex;
         flex-direction: column;
@@ -136,7 +138,7 @@
             padding: 3px 5px 3px 5px;
             flex-direction: row;
             border: 1px solid #2a2a3c;
-            background-color: #1d1d2a;
+            /* background-color: #1d1d2a; */
             
           .image {
                 aspect-ratio: 1/1;
